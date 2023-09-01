@@ -52,7 +52,7 @@ class Page:
             message=f'Element not clickable: {locator}'
         )
 
-    def wait_for_element_clickable_click(self, *locator):
+    def wait_for_element_to_be_clickable_and_click(self, *locator):
         """
             Waits for the element to be clickable and clicks on it
         """
