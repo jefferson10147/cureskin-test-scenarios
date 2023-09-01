@@ -20,6 +20,11 @@ def click_about_us(context):
     context.app.header.click_about_us()
 
 
+@when('Click on Testimonials option')
+def click_testimonials(context):
+    context.app.header.click_testimonials()
+
+
 @then('UI components are visible')
 def verify_ui_components(context):
     context.app.header.verify_presence_of_logo()
@@ -34,3 +39,8 @@ def verify_redirection(context):
 @then('User is redirected to About Us page')
 def verify_redirection_to_about_us(context):
     context.app.about_us_page.verify_page_is_opened()
+
+
+@then('User is redirected to Testimonials page')
+def verify_redirection_to_testimonials(context):
+    context.app.testimonials_page.verify_page_is_opened()
