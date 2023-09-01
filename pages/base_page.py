@@ -1,5 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class Page:
@@ -11,6 +12,10 @@ class Page:
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
         self.driver.implicitly_wait(5)
+        self.actions = ActionChains(self.driver)
+
+    def open_url(self, url):
+        self.driver.get(url)
 
     def click(self, *locator):
         """

@@ -35,3 +35,11 @@ Feature: Test scenarios for the lading page of Cureskin page
         When Click on Contact Us option
         And Verify title is shown
         Then User is redirected to Contact Us pages
+
+    Scenario: User can click on each footer link
+        Given Open landing page
+        Then User can click on each footer links
+
+    Scenario: User can click on layaout for three products per row
+        Given Open shop page
+        Then User can click on layaout for three products

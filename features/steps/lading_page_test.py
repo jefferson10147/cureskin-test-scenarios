@@ -5,6 +5,11 @@ def open_landing_page(context):
     context.app.landing_page.open_page()
 
 
+@given('Open shop page')
+def open_shop_page(context):
+    context.app.shop_page.open_page()
+
+
 @when('Click on Download option')
 def click_download_btn(context):
     context.app.landing_page.click_download_btn()
@@ -79,3 +84,13 @@ def verify_redirection_to_shop(context):
 @then('User is redirected to Contact Us pages')
 def verify_redirection_to_contact_us(context):
     context.app.contact_us_page.verify_page_is_opened()
+
+
+@then('User can click on each footer links')
+def verify_footer_links(context):
+    context.app.footer.verify_each_link_is_clickable()
+
+
+@then('User can click on layaout for three products')
+def verify_layout_three_btn(context):
+    context.app.shop_page.click_layout_three_btn()
