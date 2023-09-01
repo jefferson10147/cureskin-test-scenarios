@@ -10,6 +10,7 @@ class Header(Page):
     TESTIMONIALS_LINK = (By.CSS_SELECTOR, 'a[href*="/testimonials/"]')
     EXPERTISE_LINK = (By.CSS_SELECTOR, 'a[href*="/expertise/"]')
     SHOP_LINK = (By.CSS_SELECTOR, 'a[href*="/collections/all"]')
+    CONTACT_LINK = (By.CSS_SELECTOR, 'a[href*="/contact/"]')
 
     def verify_presence_of_logo(self):
         self.wait_for_element_clickable(*self.LOGO)
@@ -35,3 +36,6 @@ class Header(Page):
 
     def click_shop(self):
         self.wait_for_element_to_be_clickable_and_click(*self.SHOP_LINK)
+
+    def click_contact_us(self):
+        self.wait_for_element_to_be_clickable_and_click(*self.CONTACT_LINK)

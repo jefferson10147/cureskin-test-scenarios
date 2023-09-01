@@ -35,6 +35,16 @@ def click_shop(context):
     context.app.header.click_shop()
 
 
+@when('Click on Contact Us option')
+def click_contact_us(context):
+    context.app.header.click_contact_us()
+
+
+@when('Verify title is shown')
+def verify_page_contains_title(context):
+    context.app.contact_us_page.verify_page_title()
+
+
 @then('UI components are visible')
 def verify_ui_components(context):
     context.app.header.verify_presence_of_logo()
@@ -64,3 +74,8 @@ def verify_redirection_to_expertise(context):
 @then('User is redirected to Shop page')
 def verify_redirection_to_shop(context):
     context.app.shop_page.verify_page_is_opened()
+
+
+@then('User is redirected to Contact Us pages')
+def verify_redirection_to_contact_us(context):
+    context.app.contact_us_page.verify_page_is_opened()

@@ -4,7 +4,7 @@ from pages.about_us_page import AboutUsPage
 from pages.testimonials_page import TestimonialsPage
 from pages.expertise_page import ExpertisePage
 from pages.shop_page import ShopPage
-
+from pages.contact_us_page import ContactUsPage
 
 class Application:
 
@@ -16,3 +16,4 @@ class Application:
         self.testimonials_page = TestimonialsPage(self.driver)
         self.expertise_page = ExpertisePage(self.driver)
         self.shop_page = ShopPage(self.driver)
+        self.contact_us_page = ContactUsPage(self.driver)

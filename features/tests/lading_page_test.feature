@@ -29,3 +29,9 @@ Feature: Test scenarios for the lading page of Cureskin page
         Given Open landing page
         When Click on Shop option
         Then User is redirected to Shop page
+
+    Scenario: User can click on Contact Us link and the right page opens
+        Given Open landing page
+        When Click on Contact Us option
+        And Verify title is shown
+        Then User is redirected to Contact Us pages
