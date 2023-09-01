@@ -30,6 +30,11 @@ def click_expertise(context):
     context.app.header.click_expertise()
 
 
+@when('Click on Shop option')
+def click_shop(context):
+    context.app.header.click_shop()
+
+
 @then('UI components are visible')
 def verify_ui_components(context):
     context.app.header.verify_presence_of_logo()
@@ -54,3 +59,8 @@ def verify_redirection_to_testimonials(context):
 @then('User is redirected to Expertise page')
 def verify_redirection_to_expertise(context):
     context.app.expertise_page.verify_page_is_opened()
+
+
+@then('User is redirected to Shop page')
+def verify_redirection_to_shop(context):
+    context.app.shop_page.verify_page_is_opened()

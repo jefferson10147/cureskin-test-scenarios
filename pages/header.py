@@ -9,6 +9,7 @@ class Header(Page):
     ABOUT_US_LINK = (By.CSS_SELECTOR, 'a[href*="/about-cureskin/"]')
     TESTIMONIALS_LINK = (By.CSS_SELECTOR, 'a[href*="/testimonials/"]')
     EXPERTISE_LINK = (By.CSS_SELECTOR, 'a[href*="/expertise/"]')
+    SHOP_LINK = (By.CSS_SELECTOR, 'a[href*="/collections/all"]')
 
     def verify_presence_of_logo(self):
         self.wait_for_element_clickable(*self.LOGO)
@@ -31,3 +32,6 @@ class Header(Page):
 
     def click_expertise(self):
         self.wait_for_element_to_be_clickable_and_click(*self.EXPERTISE_LINK)
+
+    def click_shop(self):
+        self.wait_for_element_to_be_clickable_and_click(*self.SHOP_LINK)
