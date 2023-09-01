@@ -6,6 +6,7 @@ class Header(Page):
 
     LOGO = (By.CSS_SELECTOR, 'img[src*="logo.png"]')
     MENU = (By.CSS_SELECTOR, 'ul#menu-1-5bfd1d9 li')
+    ABOUT_US_LINK = (By.CSS_SELECTOR, 'a[href*="/about-cureskin/"]')
 
     def verify_presence_of_logo(self):
         self.wait_for_element_clickable(*self.LOGO)
@@ -19,3 +20,6 @@ class Header(Page):
     def verify_redirection_to_right_page(self):
         expected_url = 'https://play.google.com/'
         self.verify_partial_url(expected_url)
+
+    def click_about_us(self):
+        self.wait_for_element_to_be_clickable_and_click(*self.ABOUT_US_LINK)

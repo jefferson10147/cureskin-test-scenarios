@@ -15,6 +15,11 @@ def switch_to_new_window(context):
     context.app.landing_page.switch_to_new_window()
 
 
+@when('Click on About Us option')
+def click_about_us(context):
+    context.app.header.click_about_us()
+
+
 @then('UI components are visible')
 def verify_ui_components(context):
     context.app.header.verify_presence_of_logo()
@@ -24,3 +29,8 @@ def verify_ui_components(context):
 @then('User is redirected to the right page')
 def verify_redirection(context):
     context.app.header.verify_redirection_to_right_page()
+
+
+@then('User is redirected to About Us page')
+def verify_redirection_to_about_us(context):
+    context.app.about_us_page.verify_page_is_opened()

@@ -9,3 +9,8 @@ Feature: Test scenarios for the lading page of Cureskin page
         When Click on Download option
         And Switch to the new window
         Then User is redirected to the right page
+
+    Scenario: User can click on About Us and the right page opens
+        Given Open landing page
+        When Click on About Us option
+        Then User is redirected to About Us page
