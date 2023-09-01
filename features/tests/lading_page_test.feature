@@ -19,3 +19,8 @@ Feature: Test scenarios for the lading page of Cureskin page
         Given Open landing page
         When Click on Testimonials option
         Then User is redirected to Testimonials page
+
+    Scenario: User can click on Expertise link and the right page opens
+        Given Open landing page
+        When Click on Expertise option
+        Then User is redirected to Expertise page

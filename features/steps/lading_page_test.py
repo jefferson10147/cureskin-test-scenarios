@@ -25,6 +25,11 @@ def click_testimonials(context):
     context.app.header.click_testimonials()
 
 
+@when('Click on Expertise option')
+def click_expertise(context):
+    context.app.header.click_expertise()
+
+
 @then('UI components are visible')
 def verify_ui_components(context):
     context.app.header.verify_presence_of_logo()
@@ -44,3 +49,8 @@ def verify_redirection_to_about_us(context):
 @then('User is redirected to Testimonials page')
 def verify_redirection_to_testimonials(context):
     context.app.testimonials_page.verify_page_is_opened()
+
+
+@then('User is redirected to Expertise page')
+def verify_redirection_to_expertise(context):
+    context.app.expertise_page.verify_page_is_opened()
