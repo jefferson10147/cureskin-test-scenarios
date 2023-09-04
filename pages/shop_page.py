@@ -10,6 +10,7 @@ class ShopPage(Page):
     SORT_BY = (By.CSS_SELECTOR, '.disclosure-has-popup.facets__disclosure.facet-filters__sort')
     SORT_BY_SELLING = (By.XPATH, '//label[@for="Filter-best-selling-2"]')
     SORT_BY_ALPHABETICALLY = (By.XPATH, '//label[@for="Filter-title-ascending-3"]')
+    SORT_BY_ALPHABETICALLY_DESC = (By.XPATH, '//label[@for="Filter-title-descending-4"]')
 
     def open_page(self):
         self.open_url(self.PAGE_URL)
@@ -29,6 +30,9 @@ class ShopPage(Page):
 
     def click_sort_by_alphabetically(self):
         self.wait_for_element_to_be_clickable_and_click(*self.SORT_BY_ALPHABETICALLY)
+
+    def click_sort_by_alphabetically_descending(self):
+        self.wait_for_element_to_be_clickable_and_click(*self.SORT_BY_ALPHABETICALLY_DESC)
 
     def verify_url_contains_sort_query(self, query):
         self.verify_partial_url(query)

@@ -16,3 +16,9 @@ Feature: Test scenarios for the shop page of Cureskin page
         And User can select the option to sort by selling
         And User can select the option to sort alphabetically A-Z
         Then Veirfy the url contains the text "sort_by=title-ascending"
+    
+    Scenario: User can sort alphabetically Z-A
+        Given Open shop page
+        When Click on sort by
+        And User can select the option to sort alphabetically Z-A
+        Then Veirfy the url contains the text "sort_by=title-descending"
