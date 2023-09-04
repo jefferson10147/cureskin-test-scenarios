@@ -36,6 +36,15 @@ def click_cart_icon(context):
     context.app.shop_header.click_cart_icon()
 
 
+@when('Click through the pages for the collections')
+def click_through_pages(context):
+    context.app.shop_page.click_through_pages()
+
+
+@when('Calculate the total number of pages')
+def calculate_total_number_of_collections_pages(context):
+    context.app.shop_page.calculate_total_number_of_pages()
+
 @then('Click on layaout for three products')
 def verify_layout_three_btn(context):
     context.app.shop_page.click_layout_three_btn()
@@ -49,3 +58,8 @@ def verify_url_contains_query(context, query):
 @then('Verify the text "{query}" is displayed')
 def verify_text_is_displayed(context, query):
     context.app.shop_page.verify_text_is_displayed(query)
+
+
+@then('Verify the number of pages is correct')
+def verify_number_of_collections_pages(context):
+    context.app.shop_page.verify_number_of_pages()

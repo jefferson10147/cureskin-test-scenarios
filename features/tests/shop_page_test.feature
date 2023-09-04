@@ -39,3 +39,9 @@ Feature: Test scenarios for the shop page of Cureskin page
         Given Open shop page
         When Click on cart icon
         Then Verify the text "Your cart is currently empty" is displayed
+
+    Scenario: User can click through the product collections
+        Given Open shop page
+        When Calculate the total number of pages
+        And Click through the pages for the collections
+        Then Verify the number of pages is correct

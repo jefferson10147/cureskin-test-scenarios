@@ -14,6 +14,8 @@ class ShopPage(Page):
     SORT_BY_DATE_OLD_TO_NEW = (By.XPATH, '//label[@for="Filter-created-ascending-7"]')
     SORT_BY_DATE_NEW_TO_OLD = (By.XPATH, '//label[@for="Filter-created-descending-8"]')
     EMPTY_CART_TEXT = (By.CSS_SELECTOR, '.mini-cart__empty-text')
+    NEXT_PAGE_LINK = (By.CSS_SELECTOR, '.pagination__item.pagination__item--prev.motion-reduce')
+    ALL_PAGES_LINKS = (By.CSS_SELECTOR, '.pagination__list.list-unstyled li')
 
     def open_page(self):
         self.open_url(self.PAGE_URL)
@@ -48,3 +50,19 @@ class ShopPage(Page):
 
     def verify_text_is_displayed(self, query):
         self.verify_text(query, *self.EMPTY_CART_TEXT)
+
+    def calculate_total_number_of_pages(self):
+        self.driver.total_pages = len(self.find_elements(*self.ALL_PAGES_LINKS)) - 1
+
+    def click_through_pages(self):
+        next_page = self.find_elements(*self.NEXT_PAGE_LINK)
+        self.driver.pages_clicked = 1
+
+        while next_page:
+            self.wait_for_element_to_be_clickable_and_click(*self.NEXT_PAGE_LINK)
+            next_page = self.find_elements(*self.NEXT_PAGE_LINK)
+            self.driver.pages_clicked += 1
+
+    def verify_number_of_pages(self):
+        assert self.driver.total_pages == self.driver.pages_clicked, \
+        f'Expected {self.driver.total_pages} pages, but got {self.driver.pages_clicked}'
