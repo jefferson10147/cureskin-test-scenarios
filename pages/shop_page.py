@@ -11,6 +11,7 @@ class ShopPage(Page):
     SORT_BY_SELLING = (By.XPATH, '//label[@for="Filter-best-selling-2"]')
     SORT_BY_ALPHABETICALLY = (By.XPATH, '//label[@for="Filter-title-ascending-3"]')
     SORT_BY_ALPHABETICALLY_DESC = (By.XPATH, '//label[@for="Filter-title-descending-4"]')
+    SORT_BY_DATE_OLD_TO_NEW = (By.XPATH, '//label[@for="Filter-created-ascending-7"]')
 
     def open_page(self):
         self.open_url(self.PAGE_URL)
