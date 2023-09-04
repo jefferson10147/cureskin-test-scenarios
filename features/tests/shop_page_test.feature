@@ -23,4 +23,8 @@ Feature: Test scenarios for the shop page of Cureskin page
         And Select the option to sort alphabetically Z-A
         Then Verify the url contains the text "sort_by=title-descending"
 
-
+    Scenario: User can sort by date from old to new
+        Given Open shop page
+        When Click on sort by
+        And Click the option to sort by date from old to new
+        Then Verify the url contains the text "sort_by=created-ascending"

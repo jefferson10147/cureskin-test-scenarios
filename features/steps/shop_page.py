@@ -21,6 +21,11 @@ def verify_sort_by_alphabetically(context):
     context.app.shop_page.click_sort_by_alphabetically_descending()
 
 
+@when('Click the option to sort by date from old to new')
+def verify_sort_by_date_old_to_new(context):
+    context.app.shop_page.click_sort_by_date_old_to_new_option()
+
+
 @then('Click on layaout for three products')
 def verify_layout_three_btn(context):
     context.app.shop_page.click_layout_three_btn()

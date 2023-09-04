@@ -35,5 +35,8 @@ class ShopPage(Page):
     def click_sort_by_alphabetically_descending(self):
         self.wait_for_element_to_be_clickable_and_click(*self.SORT_BY_ALPHABETICALLY_DESC)
 
+    def click_sort_by_date_old_to_new_option(self):
+        self.wait_for_element_to_be_clickable_and_click(*self.SORT_BY_DATE_OLD_TO_NEW)
+
     def verify_url_contains_sort_query(self, query):
         self.verify_partial_url(query)
