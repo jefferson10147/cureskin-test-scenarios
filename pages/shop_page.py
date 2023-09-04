@@ -13,6 +13,7 @@ class ShopPage(Page):
     SORT_BY_ALPHABETICALLY_DESC = (By.XPATH, '//label[@for="Filter-title-descending-4"]')
     SORT_BY_DATE_OLD_TO_NEW = (By.XPATH, '//label[@for="Filter-created-ascending-7"]')
     SORT_BY_DATE_NEW_TO_OLD = (By.XPATH, '//label[@for="Filter-created-descending-8"]')
+    EMPTY_CART_TEXT = (By.CSS_SELECTOR, '.mini-cart__empty-text')
 
     def open_page(self):
         self.open_url(self.PAGE_URL)
@@ -44,3 +45,6 @@ class ShopPage(Page):
 
     def verify_url_contains_sort_query(self, query):
         self.verify_partial_url(query)
+
+    def verify_text_is_displayed(self, query):
+        self.verify_text(query, *self.EMPTY_CART_TEXT)

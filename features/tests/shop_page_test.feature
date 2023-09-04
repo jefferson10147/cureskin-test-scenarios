@@ -34,3 +34,8 @@ Feature: Test scenarios for the shop page of Cureskin page
         When Click on sort by
         And Click the option to sort by date from new to old
         Then Verify the url contains the text "sort_by=created-descending"
+
+    Scenario: User can see empty cart
+        Given Open shop page
+        When Click on cart icon
+        Then Verify the text "Your cart is currently empty" is displayed

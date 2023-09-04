@@ -6,6 +6,7 @@ from pages.expertise_page import ExpertisePage
 from pages.shop_page import ShopPage
 from pages.contact_us_page import ContactUsPage
 from pages.footer import Footer
+from pages.shop_header import ShopHeader
 
 class Application:
 
@@ -19,3 +20,4 @@ class Application:
         self.shop_page = ShopPage(self.driver)
         self.contact_us_page = ContactUsPage(self.driver)
         self.footer = Footer(self.driver)
+        self.shop_header = ShopHeader(self.driver)
