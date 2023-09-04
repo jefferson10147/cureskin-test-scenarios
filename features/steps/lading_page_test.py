@@ -89,8 +89,3 @@ def verify_redirection_to_contact_us(context):
 @then('User can click on each footer links')
 def verify_footer_links(context):
     context.app.footer.verify_each_link_is_clickable()
-
-
-@then('User can click on layaout for three products')
-def verify_layout_three_btn(context):
-    context.app.shop_page.click_layout_three_btn()
