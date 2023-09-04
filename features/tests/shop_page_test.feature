@@ -28,3 +28,9 @@ Feature: Test scenarios for the shop page of Cureskin page
         When Click on sort by
         And Click the option to sort by date from old to new
         Then Verify the url contains the text "sort_by=created-ascending"
+
+    Scenario: User can sort by date from new to old
+        Given Open shop page
+        When Click on sort by
+        And Click the option to sort by date from new to old
+        Then Verify the url contains the text "sort_by=created-descending"

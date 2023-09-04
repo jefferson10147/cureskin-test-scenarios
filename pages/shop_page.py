@@ -12,6 +12,7 @@ class ShopPage(Page):
     SORT_BY_ALPHABETICALLY = (By.XPATH, '//label[@for="Filter-title-ascending-3"]')
     SORT_BY_ALPHABETICALLY_DESC = (By.XPATH, '//label[@for="Filter-title-descending-4"]')
     SORT_BY_DATE_OLD_TO_NEW = (By.XPATH, '//label[@for="Filter-created-ascending-7"]')
+    SORT_BY_DATE_NEW_TO_OLD = (By.XPATH, '//label[@for="Filter-created-descending-8"]')
 
     def open_page(self):
         self.open_url(self.PAGE_URL)
@@ -37,6 +38,9 @@ class ShopPage(Page):
 
     def click_sort_by_date_old_to_new_option(self):
         self.wait_for_element_to_be_clickable_and_click(*self.SORT_BY_DATE_OLD_TO_NEW)
+
+    def click_sort_by_date_new_to_old_option(self):
+        self.wait_for_element_to_be_clickable_and_click(*self.SORT_BY_DATE_NEW_TO_OLD)
 
     def verify_url_contains_sort_query(self, query):
         self.verify_partial_url(query)
